@@ -1,0 +1,129 @@
+@import "../../scss/layout";
+@import "../../scss/variables";
+
+//Header
+.header {
+	padding: 28px 0 32px;
+
+	//Overlay when mobile nav is expanded
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: $darkSpaceBlue;
+		opacity: 0.5;
+	}
+
+	//Header inner
+	&__inner {
+		@include flex(space-between, center);
+
+		//Logo
+		.logo {
+			width: 45px;
+			height: 28px;
+		}
+
+		//Nav
+		.nav {
+			width: 256px;
+			height: 100vh;
+			position: fixed;
+			top: 0;
+			right: 0;
+			@include flex(flex-start, center);
+			background-color: $almostWhite;
+			visibility: hidden;
+			transform: translateX(100%);
+			transition: 0.3s cubic-bezier(0.33, 0.85, 0.4, 0.96);
+
+			//Nav list
+			&__list {
+				display: flex;
+				flex-direction: column;
+				gap: 24px;
+				padding-left: 24px;
+
+				//Nav item
+				&-item a {
+					font-size: 1.8rem;
+					line-height: 2.4rem;
+					color: $darkSpaceBlue;
+				}
+			}
+
+			//When nav is active make it visible and add transform
+			&.active {
+				visibility: visible;
+				transform: translateX(0);
+				transition-duration: 0.3s;
+			}
+		}
+
+		//Hamburger
+		.hamburger {
+			z-index: 9999;
+		}
+
+		//Close icon
+		.close__icon {
+			position: fixed;
+			right: 20px;
+			top: 20px;
+		}
+	}
+}
+
+@include lg {
+	//Header
+	.header {
+		padding: 90px 0 55px;
+
+		//Header inner
+		&__inner {
+			//Logo
+			.logo {
+				width: 64px;
+				height: 40px;
+			}
+
+			//Nav
+			.nav {
+				width: auto;
+				height: 100%;
+				position: static;
+				display: block;
+				transform: none;
+				visibility: visible;
+				transition: none;
+
+				//Nav list
+				&__list {
+					display: flex;
+					flex-direction: row;
+					gap: 40px;
+					padding: 0;
+
+					//Nav list item
+					&-item a {
+						font-size: 1.5rem;
+						line-height: 2.6rem;
+						color: $gunmetal;
+						transition: color 0.3s ease;
+
+						&:hover {
+							color: $lightVermillion;
+						}
+					}
+				}
+			}
+
+			//Hamburger
+			.hamburger {
+				display: none;
+			}
+		}
+	}
+}

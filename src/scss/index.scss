@@ -1,0 +1,89 @@
+@import "./variables";
+@import "./mixins";
+
+//Resets
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+//Body
+body {
+	font-family: $mainFont;
+	font-size: 1.5rem;
+	line-height: 2.6rem;
+	font-weight: 400;
+	background-color: $almostWhite;
+	color: $gunmetal;
+}
+
+//Typography
+
+h1,
+h3,
+h4 {
+	font-weight: 800;
+}
+
+h1,
+h4 {
+	color: $darkSpaceBlue;
+}
+
+h1 {
+	font-size: 4rem;
+	line-height: 4rem;
+}
+
+h2 {
+	font-size: 3.2rem;
+	font-weight: 700;
+	line-height: 3.2rem;
+	color: $yellow;
+}
+
+h3 {
+	font-size: 2rem;
+	line-height: 2.4rem;
+	color: $almostWhite;
+}
+
+h4 {
+	font-size: 1.8rem;
+	line-height: 2.4rem;
+}
+
+@include lg {
+	//Typography
+	h1 {
+		font-size: 5.6rem;
+		line-height: 5.6rem;
+	}
+
+	h2 {
+		font-size: 4rem;
+		line-height: 4rem;
+	}
+}

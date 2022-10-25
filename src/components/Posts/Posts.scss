@@ -1,0 +1,82 @@
+@import "../../scss/layout";
+@import "../../scss/variables";
+
+//Posts section
+.posts {
+	margin-bottom: 80px;
+
+	//Posts inner
+	&__inner {
+		display: grid;
+		grid-gap: 32px;
+
+		//Post
+		.post {
+			display: grid;
+			grid-gap: 24px;
+			grid-template-columns: 100px 1fr;
+
+			//Post img
+			&-img {
+				width: 100px;
+				height: 179px;
+			}
+
+			//Post content
+			&__content {
+				//Post num
+				&-num {
+					display: inline-block;
+					font-size: 3.2rem;
+					line-height: 3.2rem;
+					font-weight: 700;
+					margin-bottom: 12px;
+					color: $silver;
+				}
+
+				//Post title
+				&-title {
+					margin-bottom: 9px;
+					transition: color 0.3s ease;
+
+					&:hover {
+						color: $lightVermillion;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include x-sm {
+	//Post img
+	.posts__inner .post-img {
+		height: 127px;
+	}
+}
+
+@include md {
+	//Posts section
+	.posts {
+		margin-bottom: 129px;
+
+		//Posts inner
+		&__inner {
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 30px;
+
+			//Post
+			.post {
+				grid-template-columns: 100px 226px;
+			}
+		}
+	}
+}
+
+@include xl {
+	//Posts inner
+	.posts__inner {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
